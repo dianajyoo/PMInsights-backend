@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wake: 1
+  light: 1
+  rem: 1
+  deep: 1
+  sleeplog: one
+
+two:
+  wake: 1
+  light: 1
+  rem: 1
+  deep: 1
+  sleeplog: two

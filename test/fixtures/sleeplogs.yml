@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateOfSleep: 2018-12-13
+  duration: 1
+  efficiency: 1
+  user: one
+
+two:
+  dateOfSleep: 2018-12-13
+  duration: 1
+  efficiency: 1
+  user: two
