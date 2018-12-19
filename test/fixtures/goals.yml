@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goalDate: MyString
+  bedtimeTarget: MyString
+  wakeupTarget: MyString
+  user: one
+
+two:
+  goalDate: MyString
+  bedtimeTarget: MyString
+  wakeupTarget: MyString
+  user: two

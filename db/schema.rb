@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_13_202642) do
+ActiveRecord::Schema.define(version: 2018_12_18_165320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "goals", force: :cascade do |t|
+    t.string "goalDate"
+    t.string "bedtimeTarget"
+    t.string "wakeupTarget"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
 
   create_table "heartrates", force: :cascade do |t|
     t.date "date"
@@ -50,12 +60,12 @@ ActiveRecord::Schema.define(version: 2018_12_13_202642) do
     t.date "dateOfBirth"
     t.integer "height"
     t.integer "weight"
-    t.string "username"
-    t.string "password_digest"
+    t.string "encodedId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "goals", "users"
   add_foreign_key "heartrates", "users"
   add_foreign_key "sleepcycles", "sleeplogs"
   add_foreign_key "sleeplogs", "users"
