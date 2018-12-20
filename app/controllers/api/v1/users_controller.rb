@@ -12,6 +12,12 @@ module Api::V1
     #   render json: { user: UserSerializer.new(user)}, status: :accepted
     # end
 
+    def show
+      @user = User.find(params[:id])
+
+      render json: @user
+    end
+
     def user_params
       params.permit(:firstName, :dateOfBirth, :height, :weight, :encodedId)
     end
