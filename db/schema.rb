@@ -17,56 +17,16 @@ ActiveRecord::Schema.define(version: 2018_12_18_165320) do
 
   create_table "goals", force: :cascade do |t|
     t.string "goalDate"
-    t.string "bedtimeTarget"
-    t.string "wakeupTarget"
-    t.bigint "user_id"
+    t.string "goal"
+    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
-  create_table "heartrates", force: :cascade do |t|
-    t.date "date"
-    t.integer "restingHeartRate"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_heartrates_on_user_id"
-  end
-
-  create_table "sleepcycles", force: :cascade do |t|
-    t.integer "wake"
-    t.integer "light"
-    t.integer "rem"
-    t.integer "deep"
-    t.bigint "sleeplog_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["sleeplog_id"], name: "index_sleepcycles_on_sleeplog_id"
-  end
-
-  create_table "sleeplogs", force: :cascade do |t|
-    t.date "dateOfSleep"
-    t.integer "duration"
-    t.integer "efficiency"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_sleeplogs_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "users", primary_key: "encoded_id", id: :serial, force: :cascade do |t|
     t.string "firstName"
-    t.date "dateOfBirth"
-    t.integer "height"
-    t.integer "weight"
-    t.string "encodedId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "goals", "users"
-  add_foreign_key "heartrates", "users"
-  add_foreign_key "sleepcycles", "sleeplogs"
-  add_foreign_key "sleeplogs", "users"
 end

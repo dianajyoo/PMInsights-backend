@@ -2,12 +2,10 @@
 
 one:
   goalDate: MyString
-  bedtimeTarget: MyString
-  wakeupTarget: MyString
+  goal: MyString
   user: one
 
 two:
   goalDate: MyString
-  bedtimeTarget: MyString
-  wakeupTarget: MyString
+  goal: MyString
   user: two

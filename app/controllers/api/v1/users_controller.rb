@@ -13,13 +13,13 @@ module Api::V1
     # end
 
     def show
-      @user = User.find(params[:id])
+      @user = User.find(params[:encoded_id])
 
       render json: @user
     end
 
     def user_params
-      params.permit(:firstName, :dateOfBirth, :height, :weight, :encodedId)
+      params.permit(:firstName, :encoded_id)
     end
 
   end

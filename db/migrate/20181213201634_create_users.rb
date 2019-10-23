@@ -1,13 +1,12 @@
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change
-    create_table :users do |t|
+    create_table :users, :primary_key => :encoded_id do |t|
       t.string :firstName
-      t.date :dateOfBirth
-      t.integer :height
-      t.integer :weight
-      t.string :encodedId
+      # t.string :encoded_id, :null => false
 
       t.timestamps
     end
+    
+    change_column :users, :encoded_id, :string
   end
 end

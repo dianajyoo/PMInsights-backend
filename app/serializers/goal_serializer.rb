@@ -1,4 +1,4 @@
 class GoalSerializer < ActiveModel::Serializer
-  attributes :id, :goalDate, :bedtimeTarget, :wakeupTarget
+  attributes :id, :goalDate, :goal
   has_one :user
 end

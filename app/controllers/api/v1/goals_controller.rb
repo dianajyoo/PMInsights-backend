@@ -1,6 +1,5 @@
 module Api::V1
   class GoalsController < ApplicationController
-
     def index
       @goals = Goal.all
 
@@ -39,7 +38,7 @@ module Api::V1
     end
 
     def goal_params
-      params.permit(:goalDate, :bedtimeTarget, :wakeupTarget, :user_id)
+      params.permit(:goalDate, :goal, :user_id)
     end
 
   end

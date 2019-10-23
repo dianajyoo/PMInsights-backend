@@ -9,7 +9,7 @@
 Goal.destroy_all
 User.destroy_all
 
-User.create!(firstName: 'Diana', dateOfBirth: '1993-01-25', height: 162, weight: 47, encodedId:'72CVS3')
-# Goal.create!(goalDate: '2018-12-19', bedtimeTarget: '11:00 PM', wakeupTarget: '6:00 AM')
+user = User.create!(firstName: 'Diana', encoded_id: '72CVS3')
+Goal.create!(goalDate: '2018-12-19', goal: 'Finish project', user_id: user.encoded_id)
 
 puts ("Seeded")
